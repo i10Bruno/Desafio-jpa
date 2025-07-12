@@ -2,7 +2,9 @@ package com.desafio.desafiojavajpa.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -25,7 +27,8 @@ public class Atividades {
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
-
+    @OneToMany(mappedBy = "atividade", cascade = CascadeType.ALL)
+    private List<Bloco> blocos = new ArrayList<>();
 
     public Atividades(double preco, String descricao, String name, long id) {
         this.preco = preco;
