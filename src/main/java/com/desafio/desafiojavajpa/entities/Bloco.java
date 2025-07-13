@@ -5,6 +5,7 @@ import java.time.Instant;
 import java.util.List;
 
 @Entity
+@Table(name = "tb_bloco")
 public class Bloco {
 
     @Id
@@ -14,7 +15,7 @@ public class Bloco {
     private Instant inicio;
     private Instant fim;
     @ManyToOne
-    @JoinColumn(name = "atividade_id")
+    @JoinColumn(name = "atividades_id")
     private Atividades atividade;
 
 
